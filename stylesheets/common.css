@@ -1,0 +1,559 @@
+@charset "UTF-8";
+/* line 5, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 4, ../sass/common.scss */
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+/* line 8, ../sass/common.scss */
+html {
+  font: 14px/1.5  "Helvetica Neue", "Hiragino Sans GB",helvetica，Arial, "Microsoft YaHei", Tahoma, sans-serif;
+}
+
+/* line 14, ../sass/common.scss */
+body {
+  position: relative;
+  color: #333;
+}
+
+/* line 19, ../sass/common.scss */
+header, section, footer, aside, nav, article, figure {
+  display: block;
+}
+
+@media screen and (min-width: 1926px) {
+  /* line 23, ../sass/common.scss */
+  .layui-container {
+    width: 1880px;
+  }
+}
+
+/* line 28, ../sass/common.scss */
+.rounded {
+  width: 200px;
+  height: 200px;
+  background-color: rebeccapurple;
+  margin: 0 auto;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  transition: all 0.1s;
+  -moz-animation: circle 0.5s ease-in-out;
+  -webkit-animation: circle 0.5s ease-in-out;
+  animation: circle 0.5s ease-in-out;
+}
+
+@-moz-keyframes circle {
+  0% {
+    opacity: 0;
+    -moz-transform: translate(100px, 0);
+    transform: translate(100px, 0);
+  }
+  100% {
+    opacity: 1;
+    -moz-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+@-webkit-keyframes circle {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(100px, 0);
+    transform: translate(100px, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+@keyframes circle {
+  0% {
+    opacity: 0;
+    -moz-transform: translate(100px, 0);
+    -ms-transform: translate(100px, 0);
+    -webkit-transform: translate(100px, 0);
+    transform: translate(100px, 0);
+  }
+  100% {
+    opacity: 1;
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+/* line 49, ../sass/common.scss */
+.layer {
+  position: absolute;
+  left: -360px;
+  top: 0;
+  height: 100%;
+  background-color: #e6e6e6;
+  overflow: hidden;
+  padding: 5px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 360px;
+}
+
+/* line 63, ../sass/common.scss */
+#footer {
+  background-color: #999;
+}
+/* line 10, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
+#footer html, #footer body {
+  height: 100%;
+}
+/* line 12, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
+#footer #root {
+  clear: both;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin-bottom: -120px;
+}
+/* line 18, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
+#footer #root #root_footer {
+  height: 120px;
+}
+/* line 20, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/layout/_sticky-footer.scss */
+#footer #footer {
+  clear: both;
+  position: relative;
+  height: 120px;
+}
+
+/* line 67, ../sass/common.scss */
+nav {
+  height: 80px;
+  line-height: 80px;
+  text-align: right;
+  background-color: #000000;
+  padding: 0 5%;
+}
+
+/* line 74, ../sass/common.scss */
+section {
+  height: 500px;
+}
+
+/* line 77, ../sass/common.scss */
+.bannerbox {
+  position: relative;
+  padding-top: 30%;
+  background-color: #1E9FFF;
+}
+
+/* line 82, ../sass/common.scss */
+.bannerbox img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 10%;
+}
+
+/* line 88, ../sass/common.scss */
+.translate-right {
+  left: 0;
+}
+
+/* line 92, ../sass/common.scss */
+.pull-right {
+  text-align: right;
+}
+
+/* line 96, ../sass/common.scss */
+.layer h1 {
+  font-size: 2.4rem;
+  text-align: left;
+}
+/* line 100, ../sass/common.scss */
+.layer p {
+  font-size: 1.8rem;
+  color: rebeccapurple;
+  text-align: right;
+}
+
+/* line 108, ../sass/common.scss */
+.vague {
+  position: relative;
+  overflow: hidden;
+}
+
+/* line 112, ../sass/common.scss */
+.vague-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-filter: blur(15px);
+  -moz-filter: blur(15px);
+  -ms-filter: blur(15px);
+  -o-filter: blur(15px);
+  filter: blur(15px);
+  z-index: -1;
+}
+
+/* line 125, ../sass/common.scss */
+.vague-content {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  padding: 1% 0;
+}
+@media \0screen\,screen\9 {
+  /* line 125, ../sass/common.scss */
+  .vague-content {
+    background-color: #000;
+    filter: Alpha(opacity=50);
+    /* 只支持IE6、7、8、9 */
+    position: static;
+    /* IE6、7、8只能设置position:static(默认属性) ，否则会导致子元素继承Alpha值 */
+    *zoom: 1;
+    /* 激活IE6、7的haslayout属性，让它读懂Alpha */
+  }
+  /* line 137, ../sass/common.scss */
+  .vague-content img, .vague-content h3 {
+    position: relative;
+  }
+}
+
+/* line 142, ../sass/common.scss */
+.vague-portrait {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -moz-box-shadow: 0 0 10px #555;
+  -webkit-box-shadow: 0 0 10px #555;
+  box-shadow: 0 0 10px #555;
+}
+
+/* line 148, ../sass/common.scss */
+#border-box {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 200px;
+  border: 30px solid #3db689;
+}
+@media screen\0 {
+  /* line 148, ../sass/common.scss */
+  #border-box {
+    border: 30px solid red;
+  }
+}
+
+/* line 180, ../sass/common.scss */
+.justify {
+  text-align: justify;
+}
+/* line 182, ../sass/common.scss */
+.justify div {
+  display: inline-block;
+  width: 300px;
+  height: 350px;
+  margin: 20px 0;
+  background-color: #3db689;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 10px solid #236954;
+}
+@media screen and (max-width: 768px) {
+  /* line 192, ../sass/common.scss */
+  .justify div {
+    width: 100%;
+  }
+}
+/* line 196, ../sass/common.scss */
+.justify div.empty {
+  height: 0;
+  visibility: hidden;
+  margin: 0;
+}
+
+/* line 219, ../sass/common.scss */
+.bevel {
+  width: 300px;
+  height: 200px;
+  text-align: center;
+  margin: 0 auto;
+  color: white;
+  display: table-cell;
+  vertical-align: middle;
+  background: #46a4c1;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0) 2.5em, #46a4c1 0%) top left, linear-gradient(-135deg, rgba(0, 0, 0, 0) 2.5em, #46a4c1 0%) top right, linear-gradient(-45deg, rgba(0, 0, 0, 0) 2.5em, #46a4c1 0%) bottom right, linear-gradient(45deg, rgba(0, 0, 0, 0) 2.5em, #46a4c1 0%) bottom left;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+/* line 257, ../sass/common.scss */
+.fold {
+  width: 300px;
+  height: 200px;
+  text-align: center;
+  margin: 0 auto;
+  color: white;
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+  background: #46a4c1;
+  background: linear-gradient(-145deg, rgba(0, 0, 0, 0) 2.5em, #46a4c1 0%);
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  border-radius: 0.5em;
+}
+/* line 240, ../sass/common.scss */
+.fold::before {
+  content: '';
+  position: absolute;
+  top: -1.375em;
+  right: 0;
+  background: linear-gradient(to left bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.4)) 100% 0 no-repeat;
+  width: 3.05194em;
+  height: 4.35862em;
+  -moz-transform: translateY(-1.30668em);
+  -ms-transform: translateY(-1.30668em);
+  -webkit-transform: translateY(-1.30668em);
+  transform: translateY(-1.30668em);
+  transform-origin: bottom right;
+  -moz-transform: rotate(-20deg);
+  -ms-transform: rotate(-20deg);
+  -webkit-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+  border-bottom-left-radius: inherit;
+  -moz-box-shadow: -0.2em 0.2em 0.3em -0.1em rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: -0.2em 0.2em 0.3em -0.1em rgba(0, 0, 0, 0.2);
+  box-shadow: -0.2em 0.2em 0.3em -0.1em rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0 0 transparent\9\0;
+}
+
+/* line 269, ../sass/common.scss */
+.vertical-container {
+  text-align: center;
+  background-color: rosybrown;
+}
+/* line 272, ../sass/common.scss */
+.vertical-container .vertical-content {
+  display: inline-block;
+}
+/* line 274, ../sass/common.scss */
+.vertical-container .vertical-content .vertical {
+  width: 300px;
+  padding: 1em;
+  text-align: center;
+  color: white;
+  background-color: #46a4c1;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* line 288, ../sass/common.scss */
+.image-text {
+  overflow: hidden;
+  margin: 10px 0;
+  padding: .5em;
+  border-bottom: .5px dashed #ddd;
+}
+/* line 293, ../sass/common.scss */
+.image-text img {
+  float: left;
+  margin-right: 1em;
+}
+/* line 298, ../sass/common.scss */
+.image-text blockquote h3 {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #444;
+}
+
+/* line 307, ../sass/common.scss */
+.priority {
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  background-color: rosybrown;
+}
+
+/* line 317, ../sass/common.scss */
+.stripe {
+  height: 30px;
+  line-height: 30px;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 10px;
+  background: repeating-linear-gradient(45deg, #acc552, #acc552 15px, #2b6e81 0, #2b6e81 30px);
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr='#FFACC552', endColorstr='#FF2B6E81');
+}
+
+/* line 329, ../sass/common.scss */
+.parallelogram {
+  position: relative;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  line-height: 30px;
+  height: 30px;
+}
+
+/* line 337, ../sass/common.scss */
+.parallelogram:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: #2b6e81;
+  transform: skew(-45deg);
+}
+
+/* line 348, ../sass/common.scss */
+.border {
+  position: relative;
+  width: 200px;
+  height: 100px;
+  border: 1px solid #888;
+  background: #ddd;
+}
+
+/* line 355, ../sass/common.scss */
+.ear {
+  position: absolute;
+  top: -.47em;
+  left: 1em;
+  padding: .35em;
+  background: inherit;
+  border: 1px solid #888;
+  border-right: 0;
+  border-bottom: 0;
+  transform: rotate(45deg) !important;
+  filter: progid:DXImagetransform.Microsoft.Matrix( M11=0.707,M12=-0.707, M21=0.707,M22=0.707, SizingMethod='auto expand' );
+}
+
+/* line 370, ../sass/common.scss */
+:root .ear {
+  filter: none;
+}
+
+/* line 374, ../sass/common.scss */
+.triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px;
+  border-top-width: 0;
+  border-color: transparent transparent #999 transparent;
+}
+
+/* line 383, ../sass/common.scss */
+figure {
+  max-width: 480px;
+  max-width: min-content;
+  margin: 0 auto;
+  padding: .5em;
+  border: 1px dashed #999;
+  -moz-border-radius: 0.3em;
+  -webkit-border-radius: 0.3em;
+  border-radius: 0.3em;
+}
+/* line 391, ../sass/common.scss */
+figure img {
+  max-width: inherit;
+}
+
+/* line 396, ../sass/common.scss */
+.outline {
+  width: 200px;
+  height: 100px;
+  margin: 0 auto;
+  background: #3db689;
+  border: 10px solid #444;
+  outline: 5px solid #1E9FFF;
+}
+
+/* line 405, ../sass/common.scss */
+.test {
+  background: #46a4c1;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, #46a4c1 0%) top left, linear-gradient(-135deg, rgba(0, 0, 0, 0) 0.3em, #46a4c1 0%) top right, linear-gradient(-45deg, rgba(0, 0, 0, 0) 0.3em, #46a4c1 0%) bottom right, linear-gradient(45deg, rgba(0, 0, 0, 0) 0%, #46a4c1 0%) bottom left;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+}

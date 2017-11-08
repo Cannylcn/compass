@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Canny个人demo</title>
+    <link rel="stylesheet" href="css/layui.css">
+    <link rel="stylesheet" href="stylesheets/common.css">
+    <link rel="stylesheet" href="font/iconfont.css">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+
+    </style>
+</head>
+<body>
+<div class="layer">
+    <img width="100%" src="images/back.jpg">
+    <form class="layui-form" action="">
+        <div class="layui-form-item">
+            <label class="layui-form-label">单行输入框</label>
+            <div class="layui-input-block">
+                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">验证必填项</label>
+            <div class="layui-input-block">
+                <input type="text" name="username" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">验证手机</label>
+                <div class="layui-input-inline">
+                    <input type="tel" name="phone" lay-verify="phone" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">验证邮箱</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="email" lay-verify="email" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">多规则验证</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="number" lay-verify="required|number" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">验证日期</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="date" id="date" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">验证链接</label>
+                <div class="layui-input-inline">
+                    <input type="tel" name="url" lay-verify="url" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">验证身份证</label>
+            <div class="layui-input-block">
+                <input type="text" name="identity" lay-verify="identity" placeholder="" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+    </form>
+</div>
+<nav>
+    <button class="layui-btn">弹出</button>
+    <!--<ul class="layui-nav layui-bg-cyan">-->
+        <!--<li class="layui-nav-item" id="op"><a href="">藏蓝主题</a></li>-->
+        <!--<li class="layui-nav-item layui-this"><a href="">产品</a></li>-->
+        <!--<li class="layui-nav-item"><a href="">大数据</a></li>-->
+        <!--<li class="layui-nav-item">-->
+            <!--<a href="javascript:;">解决方案</a>-->
+            <!--<dl class="layui-nav-child">-->
+                <!--<dd><a href="">移动模块</a></dd>-->
+                <!--<dd><a href="">后台模版</a></dd>-->
+                <!--<dd><a href="">电商平台</a></dd>-->
+            <!--</dl>-->
+        <!--</li>-->
+        <!--<li class="layui-nav-item"><a href="">社区</a></li>-->
+    <!--</ul>-->
+</nav>
+<div class="layui-container">
+    <br>
+    <!--<div class="bannerbox">-->
+        <!--<img src="images/back.jpg">-->
+    <!--</div>-->
+    <div class="vague">
+        <img width="100%" src="images/back.jpg" class="vague-background">
+        <div class="vague-content">
+            <img width="80" src="images/user.jpg" class="vague-portrait">
+            <h3>裴秀智</h3>
+        </div>
+    </div>
+    <br>
+
+    <!--怪异模型-->
+    <div id="border-box">border-box；高度200；border60；内容140</div>
+    <br>
+
+    <!--弹性盒子-->
+    <div class="justify">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="empty"></div>
+    </div>
+
+    <div class="rounded" id="rounded"></div>
+
+    <br>
+    <button type="button" class="layui-btn" id="test1">
+        <i class="iconfont icon-erweima"></i>上传图片
+    </button>
+
+    <button type="button" class="layui-btn" id="upload">
+        上传
+    </button>
+    <br>
+    <br>
+
+    <!--切边-->
+    <div class="bevel">
+        <h3>切边效果，参数：背景色，左上，右上，右下，左下<br>注意，不能再用border-radius,否则在ie下出现白线</h3>
+    </div>
+    <br>
+
+    <!--折角-->
+    <div class="fold">
+        <h3>折角效果，参数：背景色，尺寸，角度</h3>
+    </div>
+    <br>
+
+    <!--垂直居中-->
+    <div class="vertical-container">
+        <div class="vertical-content">
+            <div class="vertical">
+                <img src="images/user.jpg">
+                <h3>我们的全部代码托管在GitHub（你可以通过首页的Star进入）和码云。之所以在下载包里没有提供未压缩的源代码，是为了避免一些猿的使用混淆，因为之前有遇到过部分可爱到极致的猿，居然同时引入了压缩过和未压缩过的layui.js，虽然文档在“开始使用”中有相关的明确说明，但这种问题仍然不是个例，使得我欲哭无泪啊啊啊，但毕竟我们要做“中国最容易使用的UI框架”，因此才决定只对下载包提供我们构建后的代码，并且，由于是经过了压缩、合并等处理，所以更适合用于生产环境。</h3>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <!--左图又文字-->
+    <div class="image-text">
+        <img src="images/user.jpg">
+        <blockquote>
+            <h3>裴秀智</h3>
+            <p>讲述年少时期因为令人伤痛的恶缘而分离的两个男女，在长大后以目中无人的超级甲方topstar和卑躬屈膝又势力的超级乙方纪录片导演再次相遇后刻薄又凄美的爱情故事。 剧中，金宇彬变身俘虏女星芳心的知名歌手，而秀智饰演纪录片的知名制作人，两人儿时结下不解之缘，至长大后再重逢。讲述年少时期因为令人伤痛的恶缘而分离的两个男女，在长大后以目中无人的超级甲方topstar和卑躬屈膝又势力的超级乙方纪录片导演再次相遇后刻薄又凄美的爱情故事。 剧中，金宇彬变身俘虏女星芳心的知名歌手，而秀智饰演纪录片的知名制作人，两人儿时结下不解之缘，至长大后再重逢。讲述年少时期因为令人伤痛的恶缘而分离的两个男女，在长大后以目中无人的超级甲方topstar和卑躬屈膝又势力的超级乙方纪录片导演再次相遇后刻薄又凄美的爱情故事。 剧中，金宇彬变身俘虏女星芳心的知名歌手，而秀智饰演纪录片的知名制作人，两人儿时结下不解之缘，至长大后再重逢。</p>
+        </blockquote>
+    </div>
+    <div class="image-text">
+        <img src="images/user.jpg">
+        <blockquote>
+            <h3>裴秀智</h3>
+            <p>讲述年少时期因为令人伤痛的恶缘而分离的两个男女，在长大后以目中无人的超级甲方topstar和卑躬屈膝又势力的超级乙方纪录片导演再次相遇后刻薄又凄美的爱情故事。 剧中，金宇彬变身俘虏女星芳心的知名歌手，而秀智饰演纪录片的知名制作人，两人儿时结下不解之缘，至长大后再重逢。</p>
+        </blockquote>
+    </div>
+    <div class="image-text">
+        <img src="images/user.jpg">
+        <blockquote>
+            <h3>裴秀智</h3>
+            <p>讲述年少时期因为令人伤痛的恶缘而分离的两个男女，在长大后以目中无人的超级甲方topstar和卑躬屈膝又势力的超级乙方纪录片导演再次相遇后刻薄又凄美的爱情故事。 剧中，金宇彬变身俘虏女星芳心的知名歌手，而秀智饰演纪录片的知名制作人，两人儿时结下不解之缘，至长大后再重逢。</p>
+        </blockquote>
+    </div>
+    <br>
+
+    <i class="iconfont icon-erweima" style="color: #1E9FFF;"></i><i class="iconfont icon-wodedingdan" style="color: #1E9FFF;"></i>
+    <br><br>
+
+    <div class="priority">!important,可以做ie回退，例如ie8不支持rgba()</div>
+    <br>
+
+    <div class="stripe">斜向条纹</div>
+    <br>
+
+    <div class="parallelogram">平行四边形</div>
+    <br>
+
+    <div class="border"><div class="ear"></div>currentColor继承文本的颜色，inherit继承父元素的颜色</div>
+    <br>
+
+    <div class="triangle"></div>
+    <br>
+    
+    <div>
+        <figure>
+            <img src="images/test.jpg">
+            <figcaption>
+                讲述年少时期因为令人伤痛的恶缘而分离的两个男女，在长大后以目中无人的超级甲方topstar和卑躬屈膝又势力的超级乙方纪录片导演再次相遇后刻薄又凄美的爱情故事。 剧中，金宇彬变身俘虏女星芳心的知名歌手，而秀智饰演纪录片的知名制作人，两人儿时结下不解之缘，至长大后再重逢。
+            </figcaption>
+        </figure>
+    </div>
+    <br>
+
+    <div class="outline"></div>
+    <br>
+</div>
+<script src="layui.js"></script>
+<script>
+    layui.use(['jquery','upload','layer','element'],function () {
+        var $ = layui.$
+            ,layer = layui.layer
+            ,element = layui.element
+            ,upload = layui.upload;
+
+        $('.layui-btn').click(function () {
+            startMove(-360, 0)
+        });
+
+//        layer.open({
+//            type: 1,
+////            btn: ['重要','奇葩'],
+//            skin: 'layui-layer-rim', //加上边框
+//            area: ['800px', '600px'], //宽高
+//            content: '<div id="one"><div style="height: 1000px"></div></div>   <div id="test" style="height: 42px;line-height: 42px;background-color: #ddd"><a href="http://www.layui.com" class="layui-btn layui-btn-small">交卷</a><a href="http://www.layui.com" class="layui-btn layui-btn-small">继续答题</a></div>'
+//            ,success: function(layero, index){
+//                $('#one').css({'height':$(layero).height()-85, 'overflow': 'auto'});
+////                $(layero).append('<div style="height: 42px;line-height: 42px;background-color: #ddd"><a href="http://www.layui.com" class="layui-btn layui-btn-small">交卷</a><a href="http://www.layui.com" class="layui-btn layui-btn-small">继续答题</a></div>')
+//            }
+//        });
+
+        //动画弹出层
+        var time;
+        var isShow = false;
+        var target;
+        function startMove(start, end) {
+            (isShow == false) ? target=end : target=start;
+            isShow = !isShow;
+            var popupBox = $('.layer');
+            window.clearInterval(time);
+            time=setInterval(move,18);
+
+            function move(){
+                var speed=0;
+                if(popupBox.offset().left>target){
+                    speed = -40;
+                }else{
+                    speed = 40;
+                }
+                if(popupBox.offset().left==target){
+                    if(isShow) window.clearInterval(time);
+                    else if(popupBox.offset().left==target){
+                        window.clearInterval(time)
+                    }else {
+                        popupBox.css('left', popupBox.offset().left+speed)
+                    }
+                }else{
+                    popupBox.css('left', popupBox.offset().left+speed)
+                }
+            }
+        }
+//        var time;
+//        var isShow = false;
+//        function startMove(iTraget) {
+//            var popupBox = $('.layer');
+//            window.clearInterval(time);
+//            time=setInterval(move,18);
+//
+//            function move(){
+//                var speed=0;
+//                if(popupBox.offset().left>iTraget){
+//                    speed=-40;
+//                }else{
+//                    speed=40;
+//                }
+//                if(popupBox.offset().left==iTraget){
+//                    window.clearInterval(time);
+//                }else{
+//                    popupBox.css('left', popupBox.offset().left+speed)
+//                }
+//            }
+//        }
+
+
+        function getImgNaturalDimensions(img, callback) {
+            var nWidth, nHeight
+            if (img.naturalWidth) { // 现代浏览器
+                nWidth = img.naturalWidth
+                nHeight = img.naturalHeight
+            } else { // IE6/7/8
+                var imgae = new Image()
+                image.src = img.src
+                image.onload = function() {
+                    callback(image.width, image.height)
+                }
+            }
+            return [nWidth, nHeight]
+        }
+
+        var uploadInst = upload.render({
+            elem: '#test1' //绑定元素
+            ,url: '/upload/' //上传接口
+            ,auto: false
+            ,bindAction: '#upload'
+            ,choose: function (obj) {
+                var files;
+                var img = new Image();
+
+                //预读本地文件，如果是多文件，则会遍历。(不支持ie8/9)
+                obj.preview(function(index, file, result){
+                    console.log(index); //得到文件索引
+                    console.log(file); //得到文件对象
+                    console.log(result); //得到文件base64编码，比如图片
+
+                    img.src = result;
+                    img.onload = function () {
+                        if(img.height!=80 || img.width!=80) layer.msg('图片不符合尺寸')
+                        else {
+                            files = obj.pushFile();
+                            document.body.appendChild(img)
+                        }
+                    }
+
+                    //这里还可以做一些 append 文件列表 DOM 的操作
+
+                    //obj.upload(index, file); //对上传失败的单个文件重新上传，一般在某个事件中使用
+                    //delete files[index]; //删除列表中对应的文件，一般在某个事件中使用
+                });
+            }
+            ,done: function(res){
+                //上传完毕回调
+            }
+            ,error: function(){
+                //请求异常回调
+            }
+        });
+
+//        判断媒体设备
+        function browserRedirect() {
+            var sUserAgent = navigator.userAgent.toLowerCase();
+            var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+            var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+            var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+            var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+            var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+            var bIsAndroid = sUserAgent.match(/android/i) == "android";
+            var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+            var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+            if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+                $('.layui-container').css('width','auto')
+            } else {
+//                document.writeln("pc");
+            }
+        }
+
+        browserRedirect();
+
+    })
+</script>
+</body>
+</html>

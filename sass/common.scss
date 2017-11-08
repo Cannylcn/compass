@@ -1,0 +1,407 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/layout";
+html,body{
+  height: 100%;
+  width: 100%;
+}
+html{
+  font: 14px/1.5  "Helvetica Neue", "Hiragino Sans GB",helvetica，Arial, "Microsoft YaHei", Tahoma, sans-serif;
+  //background: url("../images/back.jpg") no-repeat;
+  //background-size: 100% auto;
+  //background-attachment:fixed;
+}
+body{
+  position: relative;
+  color: #333;
+  //min-width: 768px;
+}
+header, section, footer, aside, nav, article, figure
+{
+  display: block;
+}
+.layui-container{
+  @media screen and (min-width: 1926px) {
+    width: 1880px;
+  }
+}
+.rounded{
+  width: 200px;
+  height: 200px;
+  background-color: rebeccapurple;
+  margin: 0 auto;
+  @include border-radius(50%);
+  //@include opacity(0.3);
+  transition: all 0.1s;
+  @include animation(circle 0.5s ease-in-out);
+}
+@include keyframes(circle) {
+  0% {
+    opacity: 0;
+    @include translate(100px, 0);
+  }
+  100% {
+    opacity: 1;
+    @include translate(0, 0);
+  }
+}
+
+.layer{
+  position: absolute;
+  left: -360px;
+  top: 0;
+  height: 100%;
+  background-color: #e6e6e6;
+  overflow: hidden;
+  padding: 5px;
+  @include box-sizing(border-box);
+  //transition: all 0.4s;
+  //transform: translate(500px,0);
+  width: 360px;
+  //display: none;
+}
+#footer{
+  background-color: #999;
+  @include sticky-footer(120px);
+}
+nav{
+  height: 80px;
+  line-height: 80px;
+  text-align: right;
+  background-color: #000000;
+  padding: 0 5%;
+}
+section{
+  height: 500px;
+}
+.bannerbox {
+  position:relative;
+  padding-top: 30%;
+  background-color: #1E9FFF;
+}
+.bannerbox img{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 10%;
+}
+.translate-right{
+  //transform: translate(0,0);
+  left: 0;
+}
+.pull-right{
+  text-align: right;
+}
+.layer{
+  h1{
+    font-size: 2.4rem;
+    text-align: left;
+  }
+  p{
+    font-size: 1.8rem;
+    color: rebeccapurple;
+    text-align: right;
+  }
+}
+
+//模糊效果
+.vague{
+  position: relative;
+  overflow: hidden;
+}
+.vague-background{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  //Internet-Explorer不支持filter
+  -webkit-filter: blur(15px);
+  -moz-filter: blur(15px);
+  -ms-filter: blur(15px);
+  -o-filter: blur(15px);
+  filter: blur(15px);
+  z-index: -1;
+}
+.vague-content{
+  background-color: rgba(0,0,0,.5);
+  //filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);此段代码在ie9上导致透明色过重,可以添加:root .类名{filter:none;}
+  color: white;
+  text-align: center;
+  padding: 1% 0;
+  @media \0screen\,screen\9 {
+    background-color: #000;
+    filter:Alpha(opacity=50);/* 只支持IE6、7、8、9 */
+    position: static;/* IE6、7、8只能设置position:static(默认属性) ，否则会导致子元素继承Alpha值 */
+    *zoom: 1;/* 激活IE6、7的haslayout属性，让它读懂Alpha */
+    //设置子元素为相对定位，可让子元素不继承Alpha值
+    img,h3{
+      position: relative;
+    }
+  }
+}
+.vague-portrait{
+  @include border-radius(50%);
+  @include box-shadow(0 0 10px #555);
+}
+
+
+#border-box{
+  @include box-sizing(border-box);
+  width: 100%;
+  height: 200px;
+  border: 30px solid #3db689;
+  //媒体查询IE8以上
+  @media screen\0 {
+    border: 30px solid red;
+  }
+}
+
+//.flex-box{
+//  //overflow: hidden;
+//  @include display-flex(flex);
+//  @include justify-content(space-between);
+//  @include flex-wrap(wrap);
+//  div{
+//    width: 300px;
+//    height: 350px;
+//    margin: 20px 0;
+//    background-color: #3db689;
+//    @include box-sizing(border-box);
+//    border: 10px solid #236954;
+//  }
+//  div.empty{
+//    height: 0;
+//    visibility: hidden;
+//    margin: 0;
+//  }
+//}
+
+//justify布局
+.justify {
+  text-align: justify;
+  div {
+    display: inline-block;
+    width: 300px;
+    height: 350px;
+    margin: 20px 0;
+    background-color: #3db689;
+    @include box-sizing(border-box);
+    border: 10px solid #236954;
+  }
+  @media screen and (max-width: 768px) {
+    div{
+      width: 100%;
+    }
+  }
+  div.empty {
+    height: 0;
+    visibility: hidden;
+    margin: 0;
+  }
+}
+
+//切边
+@mixin beveled-corner($fold-background, $tl:0, $tr:$tl, $br:$tl, $bl:$tr){
+  background: $fold-background;//回退
+  background:
+          linear-gradient(135deg,transparent $tl, $fold-background 0)
+          top left,
+          linear-gradient(-135deg,transparent $tr, $fold-background 0)
+          top right,
+          linear-gradient(-45deg,transparent $br, $fold-background 0)
+          bottom right,
+          linear-gradient(45deg,transparent $bl, $fold-background 0)
+          bottom left;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.bevel{
+  width: 300px;
+  height: 200px;
+  text-align: center;
+  margin: 0 auto;
+  color: white;
+  display: table-cell;
+  vertical-align: middle;
+  @include beveled-corner(#46a4c1, 2.5em, 2.5em, 2.5em, 2.5em);
+}
+
+//折角效果
+@mixin folded-corner($fold-background, $size, $angle){
+  position: relative;
+  background: $fold-background;//回退
+  background: linear-gradient($angle - 180deg, transparent $size, $fold-background 0);
+  @include border-radius(.5em);
+
+  $x: $size / sin($angle);
+  $y: $size / cos($angle);
+
+  &::before{
+    content: '';
+    position: absolute;
+    top: -.55*$size; right: 0;
+    background: linear-gradient(to left bottom,
+      transparent 50%, rgba(0,0,0,.2) 0, rgba(0,0,0,.4)) 100% 0 no-repeat;
+    width: $y;
+    height: $x;
+    @include translateY($y - $x);
+    transform-origin: bottom right;
+    @include rotate(2*$angle - 90deg);
+    border-bottom-left-radius: inherit;
+    @include box-shadow(-.2em .2em .3em -.1em rgba(0,0,0,.2));
+    box-shadow: 0 0 0 0 transparent\9\0;//兼容ie9
+  }
+}
+
+.fold{
+  width: 300px;
+  height: 200px;
+  text-align: center;
+  margin: 0 auto;
+  color: white;
+  display: table-cell;
+  vertical-align: middle;
+  @include folded-corner(#46a4c1, 2.5em, 35deg);
+}
+
+//垂直居中
+.vertical-container{
+  text-align: center;
+  background-color: rosybrown;
+  .vertical-content{
+    display: inline-block;
+    .vertical{
+      width: 300px;
+      padding: 1em;
+      text-align: center;
+      color: white;
+      background-color: #46a4c1;
+      @include border-radius(8px);
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+}
+
+//左图右文
+.image-text{
+  overflow: hidden;
+  margin: 10px 0;
+  padding: .5em;
+  border-bottom: .5px dashed #ddd;
+  img{
+    float: left;
+    margin-right: 1em;
+  }
+  blockquote{
+    h3{
+      font-size: 1.1em;
+      font-weight: 600;
+      color: #444;
+    }
+  }
+}
+
+//优先级
+.priority{
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+  color: white;
+  background-color: rgba(0,0,0,.8)!important;
+  background-color: rosybrown;
+}
+
+//斜向条纹
+.stripe{
+  height: 30px;
+  line-height: 30px;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 10px;
+  background: repeating-linear-gradient(45deg, #acc552, #acc552 15px, #2b6e81 0, #2b6e81 30px);
+  @include filter-gradient(#acc552, #2b6e81, to right);
+}
+
+//平行四边形
+.parallelogram{
+  position: relative;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  line-height: 30px;
+  height: 30px;
+}
+.parallelogram:before{
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: #2b6e81;
+  transform: skew(-45deg);
+}
+
+.border{
+  position: relative;
+  width: 200px;
+  height: 100px;
+  border: 1px solid #888;
+  background: #ddd;
+}
+.ear{
+  position: absolute;
+  top: -.47em;left: 1em;
+  padding: .35em;
+  background: inherit;
+  border: 1px solid #888;
+  border-right: 0;
+  border-bottom: 0;
+  transform: rotate(45deg)!important;
+  filter:progid:DXImagetransform.Microsoft.Matrix(
+                  M11=0.707,M12=-0.707,
+                  M21=0.707,M22=0.707,
+                  SizingMethod='auto expand'
+  );
+}
+:root .ear{
+  filter: none;
+}
+
+.triangle{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px;
+  border-top-width: 0;
+  border-color: transparent transparent #999 transparent;
+}
+
+figure{
+  max-width: 480px;
+  max-width: min-content;
+  margin: 0 auto;
+  padding: .5em;
+  border: 1px dashed #999;
+  @include border-radius(.3em);
+
+  img{
+    max-width: inherit;
+  }
+}
+
+.outline{
+  width: 200px;
+  height: 100px;
+  margin: 0 auto;
+  background: #3db689;
+  border: 10px solid #444;
+  outline: 5px solid #1E9FFF;
+}
+
+.test{
+  @include beveled-corner(#46a4c1, 0, .3em, .3em, 0);
+}
