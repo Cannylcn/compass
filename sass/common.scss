@@ -21,7 +21,7 @@ header, section, footer, aside, nav, article, figure
   display: block;
 }
 .layui-container{
-  @media screen and (min-width: 1926px) {
+  @media screen and (min-width: 2200px) {
     width: 1880px;
   }
 }
@@ -393,6 +393,7 @@ figure{
   }
 }
 
+//双重边框
 .outline{
   width: 200px;
   height: 100px;
@@ -402,6 +403,63 @@ figure{
   outline: 5px solid #1E9FFF;
 }
 
-.test{
-  @include beveled-corner(#46a4c1, 0, .3em, .3em, 0);
+//处理ie8placeholder的影响输入框会有黄色背景
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
 }
+input[type=text]:focus, input[type=password]:focus, textarea:focus {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
+//IE8hack写法
+.hack{
+  color: white;
+  text-align: center;
+  line-height: 200px;
+  width: 200px;
+  height: 200px;
+  background: black;
+  background: red\9;
+  *background: black;
+}
+:root .hack{//只对IE9和IE10生效
+  background: black;
+}
+
+//图片懒加载
+.lazy-img{
+  text-align: justify;
+  div{
+    position: relative;
+    display: inline-block;
+    width: 30%;
+    min-width: 270px;
+    margin: 2em 0;
+    text-align: center;
+    overflow: hidden;
+    background-color: #eef4f9;
+    //background-image: url("../images/error.jpg");
+    //background-size: 100% auto;
+    //background-repeat: no-repeat;
+    font-weight: 600;
+    color: #943531;
+    img{
+      position: absolute;
+      top: 0;left: 0;
+      width: 100%;
+    }
+  }
+  div.empty {
+    height: 0;
+    visibility: hidden;
+    margin: 0;
+  }
+  div:after{
+    content: '';
+    display: block;
+    margin-top: 56.4%;
+  }
+}
+

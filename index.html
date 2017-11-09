@@ -7,13 +7,11 @@
     <link rel="stylesheet" href="css/layui.css">
     <link rel="stylesheet" href="stylesheets/common.css">
     <link rel="stylesheet" href="font/iconfont.css">
+    <!--<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>-->
     <!--[if lt IE 9]>
     <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
     <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <style>
-
-    </style>
 </head>
 <body>
 <div class="layer">
@@ -122,6 +120,16 @@
         <div></div>
         <div></div>
         <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
         <div class="empty"></div>
     </div>
 
@@ -216,20 +224,113 @@
     <div class="outline"></div>
     <br>
 
-    <div>大神无畏悲伤</div>
+    <div>
+        <form class="layui-form" action="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">输入框</label>
+                <div class="layui-input-block">
+                    <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </form>
+    </div>
+    <br>
+
+    <div class="hack">hack</div>
+    <br>
+    
+    <div class="lazy-img">
+        <div><img lay-src="images/test.jpg"></div>
+        <div><img lay-src="images/test.jpg"></div>
+        <div><img lay-src="images/test.jpg"></div>
+        <div><img lay-src="images/test.jpg"></div>
+        <div><img lay-src="images/test.jpg"></div>
+        <div><img lay-src="images/test.jpg"></div>
+        <div><img lay-src="images/test.jpg"></div>
+        <div><img lay-src="images/test.jpg"></div>
+        <div><img lay-src="images/test.jpg"></div>
+        <div><img lay-src="images/test.jpg"></div>
+        <div><img lay-src="images/test.jpg"></div>
+        <div><img lay-src="images/test.jpg"></div>
+        <div><img lay-src="images/test.jpg"></div>
+        <div><img lay-src="images/test.jpg"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+    </div>
+    <br>
+
+    <div class="image-container">
+        <img src="images/test.jpg" alt="网络错误">
+    </div>
     <br>
 </div>
 <script src="layui.js"></script>
 <script>
-    layui.use(['jquery','upload','layer','element'],function () {
+//    $('img').one('error', function (e) {
+//        $(this).attr('src', 'images/error.jpg')
+//    });
+    layui.use(['jquery','upload','layer','element','form','flow'],function () {
         var $ = layui.$
             ,layer = layui.layer
             ,element = layui.element
-            ,upload = layui.upload;
+            ,upload = layui.upload
+            ,form = layui.form
+            ,flow = layui.flow;
+
+        flow.lazyimg({
+//            elem: '.lazy'
+        });
+
+//        $('.lazy-img div img').each(function () {
+//            $(this).onload(function () {
+//                alert(1)
+//            })
+//        });
+
+//        var simAlt = $('.simAlt');
+//        simAlt.text('图片加载失败！');
+//        simAlt.css({'top': '0','left': '35%','color':'#943531'});
+
+//        alt();
+//        $(window).resize(function () {
+//            alt();
+//        });
+//        function alt() {//控制alt文字居中
+//            var lazy = $('.lazy-img div');
+//            lazy.css('line-height',lazy.width()*0.0409);
+//        }
 
         $('.layui-btn').click(function () {
             startMove(-360, 0)
         });
+
+        if( !('placeholder' in document.createElement('input')) ){
+            $('input[placeholder],textarea[placeholder]').each(function(){
+                var that = $(this),
+                    text= that.attr('placeholder');
+                if(that.val()===""){
+                    that.val(text).addClass('placeholder');
+                }
+                that.focus(function(){
+                    if(that.val()===text){
+                        that.val("").removeClass('placeholder');
+                    }
+                })
+                    .blur(function(){
+                        if(that.val()===""){
+                            that.val(text).addClass('placeholder');
+                        }
+                    })
+                    .closest('form').submit(function(){
+                    if(that.val() === text){
+                        that.val('');
+                    }
+                });
+            });
+        }
 
 //        layer.open({
 //            type: 1,
@@ -273,28 +374,6 @@
                 }
             }
         }
-//        var time;
-//        var isShow = false;
-//        function startMove(iTraget) {
-//            var popupBox = $('.layer');
-//            window.clearInterval(time);
-//            time=setInterval(move,18);
-//
-//            function move(){
-//                var speed=0;
-//                if(popupBox.offset().left>iTraget){
-//                    speed=-40;
-//                }else{
-//                    speed=40;
-//                }
-//                if(popupBox.offset().left==iTraget){
-//                    window.clearInterval(time);
-//                }else{
-//                    popupBox.css('left', popupBox.offset().left+speed)
-//                }
-//            }
-//        }
-
 
         function getImgNaturalDimensions(img, callback) {
             var nWidth, nHeight
@@ -369,7 +448,13 @@
 
         browserRedirect();
 
-    })
+    });
+
+//    function noCurImg() {//加载错误图片
+//        var img=event.srcElement;
+//        img.src="images/error.jpg";
+//        img.onerror=null; //控制不要一直跳动
+//    }
 </script>
 </body>
 </html>

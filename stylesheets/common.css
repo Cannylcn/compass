@@ -86,7 +86,7 @@ header, section, footer, aside, nav, article, figure {
   display: block;
 }
 
-@media screen and (min-width: 1926px) {
+@media screen and (min-width: 2200px) {
   /* line 23, ../sass/common.scss */
   .layui-container {
     width: 1880px;
@@ -540,7 +540,7 @@ figure img {
   max-width: inherit;
 }
 
-/* line 396, ../sass/common.scss */
+/* line 397, ../sass/common.scss */
 .outline {
   width: 200px;
   height: 100px;
@@ -550,10 +550,68 @@ figure img {
   outline: 5px solid #1E9FFF;
 }
 
-/* line 405, ../sass/common.scss */
-.test {
-  background: #46a4c1;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, #46a4c1 0%) top left, linear-gradient(-135deg, rgba(0, 0, 0, 0) 0.3em, #46a4c1 0%) top right, linear-gradient(-45deg, rgba(0, 0, 0, 0) 0.3em, #46a4c1 0%) bottom right, linear-gradient(45deg, rgba(0, 0, 0, 0) 0%, #46a4c1 0%) bottom left;
-  background-size: 50% 50%;
-  background-repeat: no-repeat;
+/* line 407, ../sass/common.scss */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
+/* line 412, ../sass/common.scss */
+input[type=text]:focus, input[type=password]:focus, textarea:focus {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
+/* line 417, ../sass/common.scss */
+.hack {
+  color: white;
+  text-align: center;
+  line-height: 200px;
+  width: 200px;
+  height: 200px;
+  background: black;
+  background: red\9;
+  *background: black;
+}
+
+/* line 427, ../sass/common.scss */
+:root .hack {
+  background: black;
+}
+
+/* line 432, ../sass/common.scss */
+.lazy-img {
+  text-align: justify;
+}
+/* line 434, ../sass/common.scss */
+.lazy-img div {
+  position: relative;
+  display: inline-block;
+  width: 30%;
+  min-width: 270px;
+  margin: 2em 0;
+  text-align: center;
+  overflow: hidden;
+  background-color: #eef4f9;
+  font-weight: 600;
+  color: #943531;
+}
+/* line 448, ../sass/common.scss */
+.lazy-img div img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+/* line 454, ../sass/common.scss */
+.lazy-img div.empty {
+  height: 0;
+  visibility: hidden;
+  margin: 0;
+}
+/* line 459, ../sass/common.scss */
+.lazy-img div:after {
+  content: '';
+  display: block;
+  margin-top: 56.4%;
 }
